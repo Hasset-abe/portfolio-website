@@ -1,163 +1,83 @@
-/* 1. RESET (Cleans up default browser spacing) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 2. BODY (Your Brown & White Theme) */
-/* 2. BODY (Your Brown & White Theme & Fancy Font for everything) */
 body {
-    /* This makes ALL text on the website use the fancy font and italic style */
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic; 
-    
-    background-color: #Fdfbf7; /* Warm white background */
-    color: #3e2723; /* Dark brown text */
-    line-height: 1.8; /* I made the line-height a little bigger so italics are easier to read */
-}
-
-/* 3. HEADER LAYOUT (Flexbox for Side-by-Side) */
-.hero {
-    background-color: #5D4037; /* Dark Brown Header */
-    color: #ffffff;
-    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Beautiful blue/purple gradient */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem; /* Gives nice spacing between text and photo */
-    flex-wrap: wrap; /* Prevents breaking on small screens */
+    color: #333;
 }
 
-/* 4. HEADER TEXT & FONTS */
-.hero-text {
-    max-width: 500px;
-}
-
-.fancy-text {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic; /* Makes it fancy and slanted */
-    font-weight: normal;
-}
-
-.hero-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero-text h2 {
-    font-size: 1.5rem;
-    color: #D7CCC8; /* Lighter brown for subtitle */
-    margin-bottom: 2rem;
-}
-
-/* 5. ABOUT ME BUTTON */
-.about-btn {
-    display: inline-block;
-    padding: 10px 30px;
-    border: 2px solid #ffffff; 
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
-    transition: 0.3s ease; 
-}
-
-.about-btn:hover {
-    background-color: #ffffff;
-    color: #5D4037; 
-}
-
-/* 6. PHOTO BOX */
-/* 6. PROFILE PHOTO */
-.profile-img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover; /* This makes sure the photo doesn't look stretched */
-   border-radius: 0; /* This makes it a square with slightly smooth corners */
-    border: 4px solid #ffffff; /* A nice white border around the photo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* 7. MAIN CONTENT (The White Cards) */
-main {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-}
-
-section {
-    background-color: #ffffff;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
-}
-
-section h3 {
-    color: #5D4037;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #8D6E63;
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-section p {
-    margin-bottom: 1rem;
-}
-
-section ul {
-    margin-left: 2rem;
-}
-
-/* 8. FOOTER */
-footer {
+.weather-card {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* The Glass effect */
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
     text-align: center;
-    padding: 2rem;
-    background-color: #5D4037;
-    color: #ffffff;
-    margin-top: 2rem;
 }
 
-footer a {
-    color: #D7CCC8;
-    text-decoration: none;
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.search-box input {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f1f1f1;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.search-box button:hover {
+    background-color: #2980b9;
 }
-/* ========================================= */
-/* 9. MOBILE RESPONSIVENESS (Phones & Tablets) */
-/* ========================================= */
 
-@media (max-width: 768px) {
-    /* This makes the header stack vertically instead of side-by-side */
-    .hero {
-        flex-direction: column-reverse; /* Puts the text on bottom and photo on top. (You can change this to 'column' if you want text on top!) */
-        text-align: center;
-        padding: 4rem 1rem;
-        gap: 2rem;
-    }
+#temperature {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 1rem 0;
+}
 
-    /* Centers the text inside the left box */
-    .hero-text {
-        text-align: center;
-    }
+#weather-description {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
 
-    /* Shrinks the huge text slightly so it fits on a phone screen */
-    .hero-text h1 {
-        font-size: 2.5rem; 
-    }
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #eee;
+}
 
-    .hero-text h2 {
-        font-size: 1.2rem;
-    }
-
-    /* Adds a little extra space inside the white cards on mobile */
-    section {
-        padding: 1.5rem;
-    }
+.error {
+    color: #e74c3c;
+    margin-top: 1rem;
+    display: none; /* Hidden by default */
 }

@@ -3,69 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasset | Portfolio</title>
-    <!-- This connects your CSS file -->
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- THE HEADER (Matches your paper sketch) -->
-    <header class="hero">
-        <!-- Left Side: Text and Button -->
-        <div class="hero-text">
-            <h1 class="fancy-text">Hello, I am Hasset!</h1>
-            <h2 class="fancy-text">An Electrical Engineering student with a passion for software development.</h2>
-            <a href="#about" class="about-btn">About me</a> 
-        </div>
-
-        <!-- Right Side: The Photo -->
-       <!-- Right Side: The Photo -->
-        <div class="hero-photo">
-            <img src="hasset.jpg" alt="Photo of Hasset" class="profile-img">
-        </div>
-    </header>
-
-    <!-- THE MAIN CONTENT -->
-    <main>
+    <div class="weather-card">
         
-        <section id="about">
-            <h3>About Me</h3>
-            <p>I am a 3rd-year Electrical Engineering student who has always been deeply curious about how things function behind the scenes. So far in my studies, I have completed two semesters of Python and Java, which sparked my interest in tech. Now, I am actively teaching myself software development to expand my skills.</p>
-            <p>Beyond the screen, I am a highly sociable person who loves connecting with others. In my free time, you will usually find me participating in fellowships, reading scripture, or enjoying and singing gospel music.</p>
-        </section>
-<section id="projects">
-            <h3>My Projects</h3>
+        <!-- NEW: Welcome Message -->
+        <div id="welcome-message" style="margin-bottom: 20px;">
+            <h2 style="color: #2c3e50;">Weather App 🌍</h2>
+            <p style="color: #7f8c8d; font-size: 0.9rem;">Type any city name below to get real-time weather updates.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <!-- Error Message -->
+        <p id="error-message" class="error">City not found. Please try again.</p>
+
+        <!-- Weather Information -->
+        <div class="weather-info" id="weather-info" style="display: none;">
+            <h2 id="city-name">City Name</h2>
             
-            <div style="margin-top: 1rem;">
-                <h4 style="color: #5D4037; font-size: 1.3rem;">🍅 Pomodoro Timer & Task List</h4>
-                <p>A productivity web application built with HTML, CSS, and advanced JavaScript. It features a working 25-minute countdown timer and a functional task list that saves data to the browser's local storage.</p>
-                
-                <!-- The Links -->
-                <p style="margin-top: 10px; font-weight: bold;">
-                    <a href="YOUR_VERCEL_LINK_HERE" target="https://pomodoro-app-kappa-seven.vercel.app/">🌍 View Live App</a> | 
-                    <a href="https://github.com/Hasset-abe/pomodoro-app" target="_blank">💻 View Code on GitHub</a>
-                </p>
+            <!-- This is where our beautiful new icons will go -->
+            <img src="" id="weather-icon" style="width: 150px; margin-top: 10px;">
+            
+            <p id="weather-description">Cloudy</p>
+            <h1 id="temperature">--°C</h1>
+            
+            <!-- Details section (Humidity and Wind) -->
+            <div class="details">
+                <div class="col">
+                    <p style="font-size: 0.9rem; color: #7f8c8d;">Humidity</p>
+                    <h3 id="humidity">--%</h3>
+                </div>
+                <div class="col">
+                    <p style="font-size: 0.9rem; color: #7f8c8d;">Wind Speed</p>
+                    <h3 id="wind">-- km/h</h3>
+                </div>
             </div>
-        </section>
-        <section>
-            <h3>My Skills</h3>
-            <ul>
-                <li>Python</li>
-                <li>Java</li>
-                <li>HTML, CSS & JavaScript (Currently learning!)</li>
-            </ul>
-        </section>
+        </div>
+        
+    </div>
 
-    </main>
-
-    <!-- THE FOOTER -->
-    <footer>
-        <h3>Contact Me</h3>
-        <p>Check out my GitHub: <a href="https://github.com/Hasset-abe" target="_blank">Hasset-abe</a></p>
-    </footer>
-
-<!-- Add this right before the closing body tag -->
     <script src="script.js"></script>
 </body>
 </html>
-    
